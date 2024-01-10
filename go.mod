@@ -1,3 +1,3 @@
-module main
+module learninggo
 
 go 1.21.4
