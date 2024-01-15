@@ -5,37 +5,26 @@ import (
 	"testing"
 )
 
-const character = "a"
-const number = 6
+var character string = "a"
+var no int = 6
 
 func TestRepeat(t *testing.T) {
-	repeated := Repeat(character, number)
+
+	repeated := Repeat(character, no)
 	expected := "aaaaaa"
 
 	if repeated != expected {
-		t.Errorf("Expected %q but got %q ", expected, repeated)
+		t.Errorf("Expected %q but got %q", expected, repeated)
 	}
 }
 
-// func samp(str string, num int) string {
-// 	str1 := ""
-// 	for i := 0; i < num; i++ {
-// 		str1 += str
-// 	}
-
-// 	return str1
-// }
-
 func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		Repeat(character, number)
+		Repeat("a", 5)
 	}
 }
 
 func ExampleRepeat() {
-
-	repeated := Repeat("a", 8)
-	fmt.Println(repeated)
-	// Output: aaaaaaaa
-
+	fmt.Println(Repeat("A", 5))
+	// Output: AAAAA
 }
